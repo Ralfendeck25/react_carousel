@@ -47,19 +47,19 @@ const Carousel: React.FC<Props> = ({
 
   return (
     <div className="Carousel" style={{ width: `${itemWidth * frameSize}px` }}>
-      <ul className="Carousel__list">
-        {images.map(image => (
-          <li
-            key={image}
-            style={{
-              transform: `translateX(${position * itemWidth}px)`,
-              transition: `transform ${animationDuration}ms`,
-            }}
-          >
+      <ul 
+        className="Carousel__list"
+        style={{
+          transform: `translateX(${position * itemWidth}px)`,
+          transition: `transform ${animationDuration}ms`,
+        }}
+      >
+        {images.map((image, index) => (
+          <li key={index}>
             <img
               className="Carousel__image"
               src={image}
-              alt={image}
+              alt={`Slide ${index + 1}`}
               width={itemWidth}
             />
           </li>
